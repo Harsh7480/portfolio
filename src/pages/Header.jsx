@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Download, Moon, Sun } from 'lucide-react';
+import { Link } from 'react-router';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,15 +77,15 @@ const Header = () => {
           {/* Navigation (Desktop & Tablet) */}
           <nav className="hidden md:flex flex-wrap md:flex-nowrap items-center space-x-4 lg:space-x-10 text-gray-700 dark:text-gray-200 font-medium">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className="relative group hover:text-gray-700 dark:hover:text-white transition-colors duration-200"
                 onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.label}
                 <span className="absolute left-0 bottom-0 w-full h-0.5 bg-gray-600 dark:bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -100,14 +101,15 @@ const Header = () => {
             </button>
 
             {/* Download CV */}
-            <a
-              href="/My_Resume.pdf"
+            <Link
+              to="/My_Resume.pdf"
               download
+              target='_blank'
               className="hidden md:flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-xl font-medium hover:from-blue-700 hover:to-indigo-700 transition-transform duration-200 hover:scale-105 shadow-lg"
             >
               <Download className="w-5 h-5" />
               <span>Download CV</span>
-            </a>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
@@ -126,23 +128,24 @@ const Header = () => {
       {isOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg px-6 py-6 space-y-4 text-gray-700 dark:text-gray-200 font-medium animate-slide-down">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className="block py-2 hover:text-gray-700 dark:hover:text-white transition-transform duration-200 hover:translate-x-2"
               onClick={(e) => handleNavClick(e, link.href, true)}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="/My_Resume.pdf"
+          <Link
+            to="/My_Resume.pdf"
             download
+            target='_blank'
             className="flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-xl font-medium hover:from-blue-700 hover:to-indigo-700 transition-transform duration-200 hover:scale-105 shadow-lg"
           >
             <Download className="w-5 h-5" />
             <span>Download CV</span>
-          </a>
+          </Link>
         </div>
       )}
 
