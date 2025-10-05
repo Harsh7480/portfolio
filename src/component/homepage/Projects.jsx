@@ -1,5 +1,6 @@
 import React from "react";
 import { ExternalLink } from "lucide-react";
+import { Link } from "react-router";
 
 const projects = [
   {
@@ -137,12 +138,12 @@ const Work = () => {
 
       {/* Explore More Button */}
       <div className="mt-12 text-center">
-        <a
-          href="/projects" // replace with your page link
+        <Link
+          to="/projects" // replace with your page link
           className="px-6 py-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 dark:from-gray-800 dark:via-gray-600 dark:to-gray-800 text-white rounded-full shadow hover:bg-gray-900 transition inline-block transition-transform duration-300 hover:scale-105"
         >
           Explore More Projects
-        </a>
+        </Link>
       </div>
     </div>
   );

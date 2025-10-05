@@ -7,6 +7,7 @@ import Work from '../../component/homepage/Projects'
 import Testimonials from '../../component/homepage/Testimonials'
 import Footer from '../Footer'
 import Header from '../Header'
+import { Link } from 'react-router'
 
 function Home() {
   useEffect(() => {
@@ -41,12 +42,12 @@ function Home() {
       </h2>
 
       {/* Button */}
-      <a
-        href="/contact"
+      <Link
+        to="/contact"
         className="bg-gradient-to-r from-blue-600 to-indigo-600  dark:from-gray-800 dark:to-gray-700 hover:bg-gray-700 text-white font-medium px-6 py-3 rounded-full flex items-center space-x-2 transition-transform duration-300 hover:scale-105"
       >
         <span>Contact Me</span>
-      </a>
+      </Link>
     </div>
   </div>
 </section>
