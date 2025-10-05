@@ -1,7 +1,4 @@
 import { Route, Routes } from "react-router"
-import Home from "./pages/home/Home"
-import Contact from "./pages/Contact"
-import Project from "./pages/projects/Project"
 
 function App() {
   
